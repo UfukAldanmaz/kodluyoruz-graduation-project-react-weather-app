@@ -1,4 +1,5 @@
 .detail-weather-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,4 +9,13 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.05);
+}
+
+.detail-back-svg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    float: left;
+    width: 30px;
+    cursor: pointer;
 }
