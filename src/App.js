@@ -4,21 +4,25 @@ import {
   Route
 } from "react-router-dom";
 
-import './App.css';
+import Login from '../src/Pages/Login';
 import Home from './components/Home';
-import '../src/styles/main.scss'
+import '../src/styles/main.scss';
 import Details from "./Pages/Details";
+import { DataProvider } from "../src/Contexts/DataContext";
 
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path=":name" element={<Details />} />
-        </Routes>
-      </BrowserRouter>
+    <div>
+      <DataProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route path=":name" element={<div className="app"><Details /></div>} />
+          </Routes>
+        </BrowserRouter>
+      </DataProvider>
     </div>
   );
 }
