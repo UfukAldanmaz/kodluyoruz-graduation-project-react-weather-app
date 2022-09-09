@@ -25,3 +25,10 @@ export const getLocations = () => {
     let locations = JSON.parse(localStorage.getItem(key)) ?? [];
     return locations;
 }
+
+export const getLastLocation = () => {
+    const locations = getLocations();
+    return locations.length === 0 ?
+        null :
+        locations[0];
+}
