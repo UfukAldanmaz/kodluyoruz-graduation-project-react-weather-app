@@ -1,25 +1,83 @@
-body {
-    background: url(../assets/images/sunny-day.png) no-repeat center;
-    background-position: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // background: #000 !important;
+    // color: #0f0 !important;
+    // outline: solid #f00 1px !important;
+}
 
+body {
+
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.app {
+    background: url(../assets/images/sunny-day.png);
+    background-size: cover;
+    background-position: bottom;
+    height: 738px;
+    width: 1440px;
+    transition-timing-function: ease-out;
+    transition-timing-function: cubic-bezier(0, 0, 0.58, 1)
+}
+
+.app.autumn {
+    background: url(../assets/images/autumn.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.login-background {
+    background: url(../assets/images/weather-login.png);
+    background-size: cover;
+    background-position: center;
+    height: 738px;
+    width: 1440px;
+    padding: 50px;
+
+}
+
+.app.winter {
+    background: url(../assets/images/winter.png);
+    background-size: cover;
+    background-position: bottom;
 }
 
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background: rgba(0, 0, 0, 0.07);
+    background: rgba(0, 0, 0, 0.1);
     padding: 50px;
     margin: auto;
-    width: 50%;
-    margin-top: 100px;
+    width: 900px;
     border-radius: 15px;
+    height: 600px;
+
+
+    .temp-img {
+        margin: auto;
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .container {
+        width: 800px;
+    }
+
 
 }
 
 .column {
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
+
 }
 
 .form {
@@ -29,20 +87,33 @@ body {
 
     &-input {
         width: 300px;
-        border-radius: 15px;
         padding: 10px;
-        margin: 5px;
-        background: rgba(0, 0, 0, 0.05);
+        margin-right: 20px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        outline: 0;
+        color: #d3d3d3;
+        font-size: 15px;
+    }
 
+    &-input::placeholder {
+        color: #d3d3d3;
+        font-size: 15px;
     }
 
     &-btn {
         width: 100px;
         height: 40px;
-        border-radius: 15px;
-        background: rgba(0, 0, 0, 0.05);
-        color: #fff;
         cursor: pointer;
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        color: #d3d3d3;
+    }
+
+    &-btn:hover {
+        background: rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -50,34 +121,71 @@ body {
 .current-weather-container {
     margin: auto;
     text-align: center;
+    color: #282828;
 
     .current-details {
         font-size: larger;
         font-weight: lighter;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 20px;
+        cursor: pointer;
+        color: #282828;
+
+    }
+
+    .current-city-title {
+        width: 200px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+    }
+
+    .detail-plus-circle {
+        width: 40px;
+
     }
 }
 
 .recent-searches-container {
+    .recent-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 50px;
+    }
 
     .recent-searches {
         color: #282828;
         font-size: 22px;
         text-align: center;
+        margin: 30px;
+
     }
 
-
     .recent-weather-column {
-        height: 120px;
+        position: relative;
+        height: 100px;
+        width: 275px;
         text-align: center;
         align-items: center;
-        margin: 25px;
+        margin: 10px;
         border: 1px solid rgba(0, 0, 0, 0.3);
         border-radius: 15px;
         padding: 5px;
     }
 
     .recent-country-name {
+        text-align: center;
         font-size: 18px;
+        color: #282828;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 250px;
     }
 
     .recent-weather-img {
@@ -86,5 +194,116 @@ body {
 
     .recent-temp {
         font-size: 15px;
+        color: #282828;
+    }
+
+    .recent-detail {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        cursor: pointer;
+    }
+
+    .recent-plus-circle {
+        width: 15px;
+    }
+
+    .recent-cloud-img {
+
+        width: 180px;
+        margin-top: 80px;
+        opacity: 0.3;
+    }
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 500px;
+    height: 400px;
+    margin-top: 100px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 0%, 0.2);
+
+    .name-input {
+        width: 250px;
+        padding: 10px;
+        margin: 10px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 3);
+        outline: 0;
+        color: #d3d3d3;
+        font-size: 15px;
+    }
+
+    .name-input::placeholder {
+        color: #d3d3d3;
+        font-size: 15px;
+    }
+
+    .pass-input {
+        width: 250px;
+        padding: 10px;
+        margin: 10px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 3);
+        outline: 0;
+        color: #d3d3d3;
+        font-size: 15px;
+    }
+
+    .pass-input::placeholder {
+        color: #d3d3d3;
+        font-size: 15px;
+    }
+
+    .login-btn {
+        background: rgba(0, 0, 0, 0.25);
+        width: 250px;
+        height: 40px;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        color: #d3d3d3;
+    }
+
+    .login-btn:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .error-message {
+        color: #d3d3d3;
+        margin: 15px;
+    }
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+
+    .logout-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logout {
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        &-img {
+            width: 30px;
+        }
+
     }
 }
