@@ -30,6 +30,7 @@ const Details = (props) => {
     useEffect(() => {
         getData(name);
     }, []);
+
     return <div className={(typeof weatherData?.main != "undefined")
         ? ((weatherData?.main?.temp > 18)
             ? 'app' : (weatherData?.main?.temp < 1)
