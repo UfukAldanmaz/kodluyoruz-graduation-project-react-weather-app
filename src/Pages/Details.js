@@ -44,13 +44,13 @@ const Details = (props) => {
             <h2 className="detail-temp">{weatherData.main ? weatherData.main.temp : ""} °C</h2>
             <div className="other-info-container">
                 <div className="humidity">
-                    <p>Humidity: {weatherData.main ? weatherData.main.humidity : ""}
+                    <p>Humidity: {weatherData.main ? weatherData.main.humidity : ""}%
                     </p> <img className="humidity-img" src={Humidity} alt="Humidity" />
                 </div>
                 <div className="wind">
-                    <p>Wind: {weatherData.wind ? weatherData.wind.speed : ""}
+                    <p>Wind: {weatherData.wind ? weatherData.wind.speed : ""} mph
                     </p><img className="wind-img" src={Wind} alt="Wind" /></div>
-                <div className="temp"><p>Feels like: {weatherData.main ? weatherData.main.feels_like : ""}</p>
+                <div className="temp"><p>Feels like: {weatherData.main ? weatherData.main.feels_like : ""}°C</p>
                     <img className="temp-img" src={Temp} alt="temp" /></div>
 
             </div>
