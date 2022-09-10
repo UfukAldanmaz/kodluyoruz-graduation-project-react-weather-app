@@ -60,7 +60,13 @@ const RecentSearches = () => {
             return;
         }
 
+        // const newArr = refreshed.filter(function (value, index, array) {
+        //     console.log("INDEX", newArr)
+        //     return array.indexOf(value) === index;
+
+        // });
         const index = refreshed.findIndex(item => item.name.toUpperCase() === removedCity.toUpperCase());
+        console.log("INDEX", index);
         if (index > -1) {
             console.log("index", index);
             // if lastly removedCity is in the previously searched weather data list,
@@ -75,7 +81,7 @@ const RecentSearches = () => {
         }
 
         // we want to trigger this useEffect code block when weatherData or removedCity changed.
-    }, [weatherData, removedCity])
+    }, [weatherData])
 
 
     useEffect(() => {
