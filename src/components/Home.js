@@ -9,9 +9,10 @@ import DataContext from "../Contexts/DataContext";
 import debounce from 'lodash.debounce';
 import Navbar from "../components/Navbar";
 import { compose } from "ramda";
-import withAuth from "../hocs/withAuth"
-import { getLastLocation } from "../storage/cityStore"
+import withAuth from "../hocs/withAuth";
+import { getLastLocation } from "../storage/cityStore";
 import ErrorBoundary from "./ErrorBoundary";
+import SunWithCloud from "../assets/images/sun-with-cloud.png";
 
 const Home = (props) => {
     const { weatherData, setWeatherData } = useContext(DataContext);
@@ -75,7 +76,9 @@ const Home = (props) => {
                             ref={inputRef}
                             onChange={debouncedChangeHandler}
                             className="form-input" />
-                        <button className="form-btn">Search</button>
+                        <div className="form-btn-container">
+                            <button className="form-btn">Search<img className="form-btn-img" src={SunWithCloud} alt="sun-with-cloud" /></button>
+                        </div>
                     </form>
                     <ErrorBoundary>
                         <RecentSearches />
