@@ -10,7 +10,6 @@ import '../src/styles/main.scss';
 import Details from "./Pages/Details";
 import { DataProvider } from "../src/Contexts/DataContext";
 
-
 function App() {
   return (
     <div>
