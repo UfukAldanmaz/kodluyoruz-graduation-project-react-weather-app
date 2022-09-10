@@ -14,7 +14,7 @@ const RecentSearches = () => {
 
     // Load recent searches
     const loadPreviousSearches = () => {
-        setPreviousSearches([])
+        setPreviousSearches([]);
         const fetchData = async (location) => {
             const data = await getWeatherData(location);
             setPreviousSearches(old => [...old, data]);
@@ -25,12 +25,9 @@ const RecentSearches = () => {
         // iterate them and fetch current weather data for all recently searched cities. 
         getLocations().forEach(recentLocation => {
             try {
-                console.log(recentLocation);
                 fetchData(recentLocation);
-
             } catch (error) {
                 console.log(error);
-                // TODO: notification
             }
         });
     }
@@ -46,6 +43,7 @@ const RecentSearches = () => {
         // copy previousSearches state into local variable: 'refreshed'
         // we will manipulate this local variable later.
         const refreshed = [...previousSearches];
+        console.log('refreshed', refreshed);
 
         if (refreshed.length < 3) {
             // If user has not searched more than 3 cities yet
@@ -64,6 +62,7 @@ const RecentSearches = () => {
 
         const index = refreshed.findIndex(item => item.name.toUpperCase() === removedCity.toUpperCase());
         if (index > -1) {
+            console.log("index", index);
             // if lastly removedCity is in the previously searched weather data list,
             // then simply remove it from the list
             // then push the last weather data to at the very beginning of the previously searched list.
@@ -80,13 +79,11 @@ const RecentSearches = () => {
 
 
     useEffect(() => {
-        console.log("load", previousSearches);
         // when page is opened, just load previous search list for one time 
         loadPreviousSearches();
 
         return () => {
             // like componentUnmount event in class component, we want to empty the previous search list when user refreshes the page. 
-            console.log("test")
             setPreviousSearches([]);
         }
     }, [])
@@ -102,6 +99,7 @@ const RecentSearches = () => {
         // then get the removed city from the localStorage, if we reached 3 items in previous city names in localStorage.
         // then set this city name to use further operations above for updating the recent weather data array (previousSearches)
         const removedPreviousSearch = storeLocation(weatherData.name);
+        console.log("removed", removedPreviousSearch);
         setRemovedCity(removedPreviousSearch);
     }, [weatherData])
 
