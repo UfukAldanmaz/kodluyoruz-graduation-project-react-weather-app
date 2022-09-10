@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar";
 import { compose } from "ramda";
 import withAuth from "../hocs/withAuth"
 import { getLastLocation } from "../storage/cityStore"
+import ErrorBoundary from "./ErrorBoundary";
 
 const Home = (props) => {
     const { weatherData, setWeatherData } = useContext(DataContext);
@@ -40,7 +41,7 @@ const Home = (props) => {
     }
 
     const debouncedChangeHandler = useMemo(() => {
-        return debounce(handleChange, 250)
+        return debounce(handleChange, 100)
     }, []);
 
     useEffect(() => {
@@ -70,13 +71,16 @@ const Home = (props) => {
                 <div className="column">
                     <form onSubmit={handleSearchSubmit} className="form">
                         <input
-                            //value={location}
+                            // value={location}
                             ref={inputRef}
                             onChange={debouncedChangeHandler}
                             className="form-input" />
                         <button className="form-btn">Search</button>
                     </form>
-                    <RecentSearches />
+                    <ErrorBoundary>
+                        <RecentSearches />
+                    </ErrorBoundary>
+
                 </div>
 
                 {weatherData ?
