@@ -93,12 +93,12 @@ body {
         border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.3);
         outline: 0;
-        color: #d3d3d3;
+        color: #0c0c0c;
         font-size: 15px;
     }
 
     &-input::placeholder {
-        color: #d3d3d3;
+        color: #0b0b0b;
         font-size: 15px;
     }
 
@@ -290,10 +290,24 @@ body {
     justify-content: space-between;
     padding: 20px;
 
+    .home-nav {
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.03);
+        width: 120px;
+        border-radius: 16px;
+        text-align: center;
+        color: #fff;
+        padding-top: 15px;
+    }
+
     .logout-container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        width: 60px;
+        height: 50px;
+        border-radius: 16px;
     }
 
     .logout {
@@ -306,4 +320,11 @@ body {
         }
 
     }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 300px;
 }
