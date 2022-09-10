@@ -15,7 +15,6 @@ import { getLastLocation } from "../storage/cityStore"
 const Home = (props) => {
     const { weatherData, setWeatherData } = useContext(DataContext);
     const [location, setLocation] = useState('');
-
     const inputRef = useRef(null);
 
     // Handle form submit to fetch weather data from API
@@ -91,5 +90,4 @@ const Home = (props) => {
             </div></div></div>}</>
 }
 
-export default compose(withAuth, withLoading)(Home)
-  /*  {(typeof weatherData.main ? weatherData.main : "" != "undefined") ? ((weatherData.main ? weatherData.main.temp : "" > 16) ? 'app' : 'app autumn') : 'app'}*/
+export default compose(withAuth, withLoading)(Home);
