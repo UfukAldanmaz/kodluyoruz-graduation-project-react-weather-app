@@ -17,22 +17,18 @@ const RecentSearches = () => {
 
     // Load recent searches
     const loadPreviousSearches = () => {
-        setPreviousSearches([]);
-        const fetchData = async (location) => {
-            const data = await getWeatherData(location);
-            setPreviousSearches(old => [...old, data]);
-        }
-
-
         // we read localStorage to get recently searched cities
-        // iterate them and fetch current weather data for all recently searched cities. 
+        // iterate them and create promises for them to fetch current weather data for all recently searched cities. 
+        let promises = [];
         getLocations().forEach(recentLocation => {
-            try {
-                fetchData(recentLocation);
-            } catch (error) {
-                console.log(error);
-            }
+            promises.push(getWeatherData(recentLocation));
         });
+
+        // in order to keep search results ordered, we use promise.all
+        Promise.all(promises)
+            .then((responses) => {
+                setPreviousSearches(responses);
+            })
     }
 
     const updateLastSearch = () => {
