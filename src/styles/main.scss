@@ -16,7 +16,7 @@ body {
     background-size: cover;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
     body {
         width: max-content;
         padding-left: 50px;
@@ -27,13 +27,22 @@ body {
 
 .login-background {
     background: url(../assets/images/weather-login.png);
-    background-size: cover;
-    background-position: center;
-    height: 738px;
-    width: 1440px;
-    padding: 50px;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
     opacity: 0.8;
 
+}
+
+@media screen and (max-width: 1024px) {
+    .login-background {
+        left: 50%;
+        margin-left: -512px;
+    }
 }
 
 .container {
