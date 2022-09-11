@@ -34,7 +34,6 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    opacity: 0.8;
 }
 
 @media screen and (max-width: 1024px) {
@@ -235,7 +234,7 @@ body {
     height: 400px;
     margin-top: 100px;
     border-radius: 10px;
-    background-color: hsl(0, 0%, 0%, 0.4);
+    background-color: hsl(0, 0%, 0%, 0.3);
 
     .name-input {
         width: 250px;
