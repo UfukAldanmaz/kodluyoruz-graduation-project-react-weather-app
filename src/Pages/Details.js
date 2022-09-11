@@ -41,7 +41,7 @@ const Details = (props) => {
             <h1 className="detail-city-title">{weatherData.name}</h1>
             <p>{weatherData.weather ? weatherData.weather[0].main : ""}</p>
             <img className="detail-weather-img" src={`http://openweathermap.org/img/wn/${weatherData.weather ? weatherData.weather[0].icon : null}@2x.png`} alt={weatherData.name} />
-            <h2 className="detail-temp">{weatherData.main ? weatherData.main.temp : ""} °C</h2>
+            <h2 className="detail-temp">{Math.round(weatherData.main ? weatherData.main.temp : "")} °C</h2>
             <div className="other-info-container">
                 <div className="humidity">
                     <p>Humidity: {weatherData.main ? weatherData.main.humidity : ""}%
@@ -50,7 +50,7 @@ const Details = (props) => {
                 <div className="wind">
                     <p>Wind: {weatherData.wind ? weatherData.wind.speed : ""} mph
                     </p><img className="wind-img" src={Wind} alt="Wind" /></div>
-                <div className="temp"><p>Feels like: {weatherData.main ? weatherData.main.feels_like : ""}°C</p>
+                <div className="temp"><p>Feels like: {Math.round(weatherData.main ? weatherData.main.feels_like : "")}°C</p>
                     <img className="temp-img" src={Temp} alt="temp" /></div>
 
             </div>
