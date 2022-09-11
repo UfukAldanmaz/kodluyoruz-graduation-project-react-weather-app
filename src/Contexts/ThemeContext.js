@@ -25,12 +25,6 @@ export const ThemeProvider = ({ children }) => {
                 setBgImage(fall);
                 break;
         }
-
-        // document.body.classList.add('summer');
-        // document.body.classList.add('fall');
-        // document.body.classList.add('winter');
-        // const summer = document.getElementsByClassName('summer');
-        // summer.style.backgroundImage = url(../assets/images/sunny-day.png)
     }, [temp]);
 
     useLayoutEffect(() => {
