@@ -1,15 +1,14 @@
+import Home from './components/Home';
+import Login from '../src/Pages/Login';
+import Details from "./Pages/Details";
+import { DataProvider } from "../src/Contexts/DataContext";
+import { ThemeProvider } from "./Contexts/ThemeContext";
 import {
   Routes,
   Route,
   HashRouter
 } from "react-router-dom";
-
-import Login from '../src/Pages/Login';
-import Home from './components/Home';
 import '../src/styles/main.scss';
-import Details from "./Pages/Details";
-import { DataProvider } from "../src/Contexts/DataContext";
-import { ThemeProvider } from "./Contexts/ThemeContext";
 
 function App() {
   return (
