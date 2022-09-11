@@ -1,7 +1,7 @@
-import PlusCircle from '../assets/images/plus-circle-svgrepo-com.svg';
 import { useContext } from 'react';
-import DataContext from '../Contexts/DataContext';
 import { useNavigate } from "react-router-dom";
+import DataContext from '../Contexts/DataContext';
+import PlusCircle from '../assets/images/plus-circle-svgrepo-com.svg';
 
 const CurrentWeather = () => {
     const { weatherData, setIsSearched } = useContext(DataContext);
