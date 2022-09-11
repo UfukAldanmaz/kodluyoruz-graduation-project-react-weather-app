@@ -18,11 +18,10 @@ body {
 
 @media only screen and (max-width: 900px) {
     body {
-        width: fit-content;
+        width: max-content;
         padding-left: 50px;
         padding-right: 50px;
         padding-bottom: 50px;
-
     }
 }
 
@@ -290,9 +289,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
-
+    padding: 20px;
 
     .home-nav {
         text-decoration: none;
