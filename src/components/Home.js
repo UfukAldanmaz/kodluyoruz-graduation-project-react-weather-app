@@ -71,35 +71,34 @@ const Home = (props) => {
     }, [props.isLoading])
 
     return <> {<div>
-        <div>
-            <Navbar />
-            <div className="container">
-                <div className="column">
-                    <form onSubmit={handleSearchSubmit} className="form">
-                        <input
-                            // value={location}
-                            ref={inputRef}
-                            onChange={debouncedChangeHandler}
-                            className="form-input" />
-                        <div className="form-btn-container">
-                            <button className="form-btn">Search<img className="form-btn-img" src={SunWithCloud} alt="sun-with-cloud" /></button>
-                        </div>
-                    </form>
-                    <ErrorBoundary>
-                        <RecentSearches />
-                    </ErrorBoundary>
+        <Navbar />
+        <div className="container">
+            <div className="column">
+                <form onSubmit={handleSearchSubmit} className="form">
+                    <input
+                        // value={location}
+                        ref={inputRef}
+                        onChange={debouncedChangeHandler}
+                        className="form-input" />
+                    <div className="form-btn-container">
+                        <button className="form-btn">Search<img className="form-btn-img" src={SunWithCloud} alt="sun-with-cloud" /></button>
+                    </div>
+                </form>
+                <ErrorBoundary>
+                    <RecentSearches />
+                </ErrorBoundary>
 
-                </div>
+            </div>
 
-                {weatherData ?
-                    <CurrentWeather />
-                    :
-                    <img className="temp-img"
-                        src={Temperature}
-                        alt="temperature" />
-                }
+            {weatherData ?
+                <CurrentWeather />
+                :
+                <img className="temp-img"
+                    src={Temperature}
+                    alt="temperature" />
+            }
 
-            </div></div></div>}</>
+        </div></div>}</>
 }
 
 export default compose(withAuth, withLoading)(Home);
