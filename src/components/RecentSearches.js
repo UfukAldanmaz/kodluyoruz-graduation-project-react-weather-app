@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { storeLocation, getLocations } from "../storage/cityStore";
 import { getWeatherData } from "../services/weatherApi";
-import { useNavigate } from "react-router-dom";
-import More from '../assets/images/more.png';
 import DataContext from "../Contexts/DataContext";
+import More from '../assets/images/more.png';
 import Cloud from "../assets/images/cloud.png"
+import { useNavigate } from "react-router-dom";
 
 const RecentSearches = () => {
     const { weatherData, isSearched, setIsSearched } = useContext(DataContext);
