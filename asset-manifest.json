@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.b0e718c5.css",
+    "main.css": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.254e7f36.css",
     "main.js": "/kodluyoruz-graduation-project-react-weather-app/static/js/main.60167f90.js",
     "static/js/787.cd167319.chunk.js": "/kodluyoruz-graduation-project-react-weather-app/static/js/787.cd167319.chunk.js",
     "static/media/winter.png": "/kodluyoruz-graduation-project-react-weather-app/static/media/winter.849a190df64653a9ea8b.png",
@@ -10,12 +10,12 @@
     "index.html": "/kodluyoruz-graduation-project-react-weather-app/index.html",
     "static/media/arrow-back-circle-outline-svgrepo-com.svg": "/kodluyoruz-graduation-project-react-weather-app/static/media/arrow-back-circle-outline-svgrepo-com.43a11d1604e2e0cdf687d8946ce1f7b5.svg",
     "static/media/plus-circle-svgrepo-com.svg": "/kodluyoruz-graduation-project-react-weather-app/static/media/plus-circle-svgrepo-com.c22eeac3045018776d91e5ad1b34be08.svg",
-    "main.b0e718c5.css.map": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.b0e718c5.css.map",
+    "main.254e7f36.css.map": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.254e7f36.css.map",
     "main.60167f90.js.map": "/kodluyoruz-graduation-project-react-weather-app/static/js/main.60167f90.js.map",
     "787.cd167319.chunk.js.map": "/kodluyoruz-graduation-project-react-weather-app/static/js/787.cd167319.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0e718c5.css",
+    "static/css/main.254e7f36.css",
     "static/js/main.60167f90.js"
   ]
 }
