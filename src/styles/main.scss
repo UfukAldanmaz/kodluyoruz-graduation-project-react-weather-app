@@ -8,13 +8,22 @@
 }
 
 body {
-
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+        width: fit-content;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+
+    }
 }
 
 .login-background {
@@ -281,7 +290,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 
     .home-nav {
         text-decoration: none;
@@ -301,6 +312,7 @@ body {
         width: 60px;
         height: 50px;
         border-radius: 16px;
+
     }
 
     .logout {
