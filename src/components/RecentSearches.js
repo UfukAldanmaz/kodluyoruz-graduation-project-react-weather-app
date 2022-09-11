@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { storeLocation, getLocations } from "../storage/cityStore";
 import { getWeatherData } from "../services/weatherApi";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ const RecentSearches = () => {
     const { weatherData, isSearched, setIsSearched } = useContext(DataContext);
     const [previousSearches, setPreviousSearches] = useState([]);
     const [removedCity, setRemovedCity] = useState(null);
+    const [needsUpdate, setNeedsUpdate] = useState(false);
     const navigate = useNavigate();
 
 
@@ -34,9 +35,7 @@ const RecentSearches = () => {
         });
     }
 
-    useEffect(() => {
-        // refresh previous search
-
+    const updateLastSearch = () => {
         // if we have no weatherData, then do nothing.
         if (!weatherData) {
             return
@@ -47,9 +46,17 @@ const RecentSearches = () => {
         const refreshed = [...previousSearches];
 
         if (refreshed.length < 3) {
-            // If user has not searched more than 3 cities yet
-            // then just push the latest weatherData to previousSearches state.
-            setPreviousSearches(old => [weatherData, ...old])
+            console.log("rererere", refreshed);
+            const index = refreshed.findIndex(item => item.name.toUpperCase() === weatherData.name.toUpperCase());
+            if (index > -1) {
+                refreshed.splice(index, 1);
+                refreshed.unshift(weatherData);
+                setPreviousSearches(refreshed);
+            } else {
+                // If user has not searched more than 3 cities yet
+                // then just push the latest weatherData to previousSearches state.
+                setPreviousSearches(old => [weatherData, ...old])
+            }
             return;
         }
 
@@ -72,10 +79,18 @@ const RecentSearches = () => {
             // because this is the best way to manipulate array of object states.
             setPreviousSearches(refreshed);
         }
+    }
 
-        setRemovedCity(null)
+    useEffect(() => {
+        // refresh previous search
+        console.log("rem", removedCity, needsUpdate);
+        if (!needsUpdate) {
+            return
+        }
+        updateLastSearch();
+        setNeedsUpdate(false);
         // we want to trigger this useEffect code block when removedCity changed.
-    }, [removedCity])
+    }, [needsUpdate])
 
 
 
@@ -90,18 +105,26 @@ const RecentSearches = () => {
     }, [])
 
     useEffect(() => {
+        console.log("deneme", weatherData?.name);
+
         // if we have no weatherData, then do nothing.
         if (!weatherData || !isSearched) {
             return
         }
+
 
         // we want to run this code block when everytime weatherData changes.
         // we just store the city name of lastly searched weather data.
         // then get the removed city from the localStorage, if we reached 3 items in previous city names in localStorage.
         // then set this city name to use further operations above for updating the recent weather data array (previousSearches)
         const removedPreviousSearch = storeLocation(weatherData.name);
+
+        console.log("deneme2", removedPreviousSearch);
+
+
         setRemovedCity(removedPreviousSearch);
-    }, [weatherData])
+        setNeedsUpdate(true);
+    }, [weatherData, isSearched])
 
     return <div className="recent-searches-container">
         <div className="recent-column">
