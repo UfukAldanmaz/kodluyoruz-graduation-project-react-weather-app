@@ -28,8 +28,6 @@ export const ThemeProvider = ({ children }) => {
     }, [temp]);
 
     useLayoutEffect(() => {
-        console.log("bg", temp, bgImage)
-
         document.body.style.backgroundImage = `url(${bgImage})`
     }, [bgImage])
 
