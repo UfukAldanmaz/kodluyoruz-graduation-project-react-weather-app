@@ -36,6 +36,7 @@ body {
     height: 738px;
     width: 1440px;
     padding: 50px;
+    opacity: 0.8;
 
 }
 
@@ -245,7 +246,7 @@ body {
     height: 400px;
     margin-top: 100px;
     border-radius: 10px;
-    background-color: hsl(0, 0%, 0%, 0.2);
+    background-color: hsl(0, 0%, 0%, 0.4);
 
     .name-input {
         width: 250px;
