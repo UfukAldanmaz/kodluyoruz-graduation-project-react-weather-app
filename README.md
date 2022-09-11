@@ -1,3 +1,11 @@
+live site: https://ufukaldanmaz.github.io/kodluyoruz-graduation-project-react-weather-app/ 
+
+name: admin
+password: admin
+
+![Ekran Resmi 2022-09-11 15 55 09](https://user-images.githubusercontent.com/61687476/189528652-a81739ac-6e9a-4550-be0f-80b884a2c71c.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
