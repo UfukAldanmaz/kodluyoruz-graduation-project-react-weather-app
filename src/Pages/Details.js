@@ -1,16 +1,16 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getWeatherData } from "../services/weatherApi";
-import '../Pages/detail.scss';
-import BackArrow from '../assets/images/arrow-back-circle-outline-svgrepo-com.svg'
+import Navbar from "../components/Navbar";
+import ThemeContext from "../Contexts/ThemeContext";
+import withAuth from "../hocs/withAuth";
 import withLoading from "../hocs/withLoading";
+import '../Pages/detail.scss';
 import Humidity from "../assets/images/humidity.png"
 import Wind from "../assets/images/wind.png"
 import Temp from "../assets/images/temp.png"
-import Navbar from "../components/Navbar";
+import BackArrow from '../assets/images/arrow-back-circle-outline-svgrepo-com.svg'
 import { compose } from "ramda";
-import withAuth from "../hocs/withAuth";
-import ThemeContext from "../Contexts/ThemeContext";
 
 const Details = (props) => {
     const { setTemp } = useContext(ThemeContext);
