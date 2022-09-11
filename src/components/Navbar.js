@@ -1,6 +1,7 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import Login from '../assets/images/login.png'
 import { setLoggedOut } from '../storage/authStore';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Login from '../assets/images/login.png';
+
 const Navbar = () => {
     const navigate = useNavigate();
     const logout = () => {
