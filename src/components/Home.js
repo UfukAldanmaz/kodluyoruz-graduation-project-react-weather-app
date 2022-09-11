@@ -1,19 +1,19 @@
 import { useState, useEffect, useRef, useContext, useMemo } from "react";
 import { getWeatherData } from "../services/weatherApi";
-import CurrentWeather from "./CurrentWeather";
-import Temperature from '../assets/images/temperature.png';
 import withLoading from "../hocs/withLoading";
-import '../styles/main.scss';
-import RecentSearches from "./RecentSearches";
-import DataContext from "../Contexts/DataContext";
-import debounce from 'lodash.debounce';
-import Navbar from "../components/Navbar";
-import { compose } from "ramda";
 import withAuth from "../hocs/withAuth";
 import { getLastLocation } from "../storage/cityStore";
+import CurrentWeather from "./CurrentWeather";
+import RecentSearches from "./RecentSearches";
+import Navbar from "../components/Navbar";
 import ErrorBoundary from "./ErrorBoundary";
-import SunWithCloud from "../assets/images/sun-with-cloud.png";
+import DataContext from "../Contexts/DataContext";
 import ThemeContext from "../Contexts/ThemeContext";
+import '../styles/main.scss';
+import Temperature from '../assets/images/temperature.png';
+import SunWithCloud from "../assets/images/sun-with-cloud.png";
+import debounce from 'lodash.debounce';
+import { compose } from "ramda";
 
 const Home = (props) => {
     const { weatherData, setWeatherData, setIsSearched } = useContext(DataContext);
