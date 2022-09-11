@@ -4,7 +4,7 @@ import DataContext from '../Contexts/DataContext';
 import { useNavigate } from "react-router-dom";
 
 const CurrentWeather = () => {
-    const { weatherData } = useContext(DataContext);
+    const { weatherData, setIsSearched } = useContext(DataContext);
     const navigate = useNavigate();
 
     return <div className="current-weather-container">
@@ -12,12 +12,15 @@ const CurrentWeather = () => {
         <img className="current-weather-img" src={`http://openweathermap.org/img/wn/${weatherData.weather
             ? weatherData.weather[0].icon
             : null}@2x.png`} alt={weatherData.name} />
-        <h2 className="current-temp">{weatherData.main
+        <h2 className="current-temp">{Math.round(weatherData.main
             ? weatherData.main.temp
-            : ""} °C</h2>
-        <span className="current-details" onClick={() => navigate(
-            `${weatherData.name}`
-        )}>Details <img className='detail-plus-circle' src={PlusCircle} alt="PlusCircle" /> </span>
+            : "")} °C</h2>
+        <span className="current-details" onClick={() => {
+            setIsSearched(false)
+            navigate(
+                `${weatherData.name}`
+            )
+        }}>Details <img className='detail-plus-circle' src={PlusCircle} alt="PlusCircle" /> </span>
     </div>
 }
 

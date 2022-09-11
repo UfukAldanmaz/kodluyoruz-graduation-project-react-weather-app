@@ -15,13 +15,14 @@ import ErrorBoundary from "./ErrorBoundary";
 import SunWithCloud from "../assets/images/sun-with-cloud.png";
 
 const Home = (props) => {
-    const { weatherData, setWeatherData } = useContext(DataContext);
+    const { weatherData, setWeatherData, setIsSearched } = useContext(DataContext);
     const [location, setLocation] = useState('');
     const inputRef = useRef(null);
 
     // Handle form submit to fetch weather data from API
     const handleSearchSubmit = async (e) => {
         e.preventDefault()
+        setIsSearched(true);
         await loadWeatharData(location);
     }
 
