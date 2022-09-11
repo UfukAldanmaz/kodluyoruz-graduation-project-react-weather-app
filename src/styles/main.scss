@@ -11,22 +11,10 @@ body {
 
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
-}
-
-.app {
-    background: url(../assets/images/sunny-day.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    background-position: bottom;
-    height: 738px;
-    width: 1440px;
-    transition-timing-function: ease-out;
-    transition-timing-function: cubic-bezier(0, 0, 0.58, 1)
-}
-
-.app.autumn {
-    background: url(../assets/images/autumn.png);
-    background-size: cover;
-    background-position: bottom;
 }
 
 .login-background {
@@ -38,12 +26,6 @@ body {
     padding: 50px;
     opacity: 0.8;
 
-}
-
-.app.winter {
-    background: url(../assets/images/winter.png);
-    background-size: cover;
-    background-position: bottom;
 }
 
 .container {

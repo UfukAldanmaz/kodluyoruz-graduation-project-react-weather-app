@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getWeatherData } from "../services/weatherApi";
 import '../Pages/detail.scss';
@@ -10,9 +10,10 @@ import Temp from "../assets/images/temp.png"
 import Navbar from "../components/Navbar";
 import { compose } from "ramda";
 import withAuth from "../hocs/withAuth";
-
+import ThemeContext from "../Contexts/ThemeContext";
 
 const Details = (props) => {
+    const { setTemp } = useContext(ThemeContext);
     const [weatherData, setWeatherData] = useState([]);
     const { name } = useParams();
     const navigate = useNavigate();
@@ -31,11 +32,11 @@ const Details = (props) => {
         getData(name);
     }, []);
 
-    return <div className={(typeof weatherData?.main != "undefined")
-        ? ((weatherData?.main?.temp > 18)
-            ? 'app' : (weatherData?.main?.temp < 1)
-                ? 'app winter' : 'app autumn') : 'app'}
-    ><Navbar />
+    useEffect(() => {
+        setTemp(weatherData?.main?.temp);
+    }, [weatherData, setTemp])
+
+    return <div><Navbar />
         <div className="detail-weather-container">
             <img className="detail-back-svg" src={BackArrow} alt="BackArrow" onClick={() => navigate('/')} />
             <h1 className="detail-city-title">{weatherData.name}</h1>

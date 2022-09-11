@@ -13,9 +13,11 @@ import withAuth from "../hocs/withAuth";
 import { getLastLocation } from "../storage/cityStore";
 import ErrorBoundary from "./ErrorBoundary";
 import SunWithCloud from "../assets/images/sun-with-cloud.png";
+import ThemeContext from "../Contexts/ThemeContext";
 
 const Home = (props) => {
     const { weatherData, setWeatherData, setIsSearched } = useContext(DataContext);
+    const { setTemp } = useContext(ThemeContext);
     const [location, setLocation] = useState('');
     const inputRef = useRef(null);
 
@@ -26,9 +28,14 @@ const Home = (props) => {
         await loadWeatharData(location);
     }
 
+    useEffect(() => {
+        setTemp(weatherData?.main?.temp);
+    }, [weatherData, setTemp])
+
+
     const loadWeatharData = async (location) => {
         try {
-            props.setIsLoading(true)
+            props.setIsLoading(true);
             const data = await getWeatherData(location);
             setWeatherData(data);
         } catch (error) {
@@ -39,11 +46,11 @@ const Home = (props) => {
     }
 
     const handleChange = (e) => {
-        setLocation(e.target.value)
+        setLocation(e.target.value);
     }
 
     const debouncedChangeHandler = useMemo(() => {
-        return debounce(handleChange, 100)
+        return debounce(handleChange, 100);
     }, []);
 
     useEffect(() => {
@@ -64,10 +71,7 @@ const Home = (props) => {
     }, [props.isLoading])
 
     return <> {<div>
-        <div className={(typeof weatherData?.main != "undefined")
-            ? ((weatherData?.main?.temp > 18)
-                ? 'app' : (weatherData?.main?.temp < 1)
-                    ? 'app winter' : 'app autumn') : 'app'}>
+        <div>
             <Navbar />
             <div className="container">
                 <div className="column">
