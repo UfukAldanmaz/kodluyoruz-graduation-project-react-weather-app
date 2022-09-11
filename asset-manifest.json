@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.b338ca61.css",
+    "main.js": "/kodluyoruz-graduation-project-react-weather-app/static/js/main.a634d43b.js",
+    "static/js/787.cd167319.chunk.js": "/kodluyoruz-graduation-project-react-weather-app/static/js/787.cd167319.chunk.js",
+    "static/media/winter.png": "/kodluyoruz-graduation-project-react-weather-app/static/media/winter.849a190df64653a9ea8b.png",
+    "static/media/weather-login.png": "/kodluyoruz-graduation-project-react-weather-app/static/media/weather-login.5031e6e2318776e3873a.png",
+    "static/media/sunny-day.png": "/kodluyoruz-graduation-project-react-weather-app/static/media/sunny-day.f5dca11a0f2f34ab68f4.png",
+    "static/media/autumn.png": "/kodluyoruz-graduation-project-react-weather-app/static/media/autumn.03f0d7d9d99dc8b2782b.png",
+    "index.html": "/kodluyoruz-graduation-project-react-weather-app/index.html",
+    "static/media/arrow-back-circle-outline-svgrepo-com.svg": "/kodluyoruz-graduation-project-react-weather-app/static/media/arrow-back-circle-outline-svgrepo-com.43a11d1604e2e0cdf687d8946ce1f7b5.svg",
+    "static/media/plus-circle-svgrepo-com.svg": "/kodluyoruz-graduation-project-react-weather-app/static/media/plus-circle-svgrepo-com.c22eeac3045018776d91e5ad1b34be08.svg",
+    "main.b338ca61.css.map": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.b338ca61.css.map",
+    "main.a634d43b.js.map": "/kodluyoruz-graduation-project-react-weather-app/static/js/main.a634d43b.js.map",
+    "787.cd167319.chunk.js.map": "/kodluyoruz-graduation-project-react-weather-app/static/js/787.cd167319.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b338ca61.css",
+    "static/js/main.a634d43b.js"
+  ]
+}
