@@ -15,7 +15,7 @@ const withLoading = WrappedComponent => {
             setTemp(weatherData?.main?.temp);
         }, [weatherData, setTemp])
 
-        return (<>{isLoading && <div><div className="loading"><ThreeDots
+        return (<>{isLoading && <div className="loading"><ThreeDots
             height="80"
             width="80"
             radius="9"
@@ -24,7 +24,7 @@ const withLoading = WrappedComponent => {
             wrapperStyle={{}}
             wrapperClassName=""
             visible={true}
-        /></div></div>}
+        /></div>}
             <WrappedComponent isLoading={isLoading} setIsLoading={setIsLoading} {...props} /></>
         )
     }
